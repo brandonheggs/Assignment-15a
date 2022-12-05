@@ -3,7 +3,6 @@
 //November 26, 2022
 
 #include <iostream>
-#include <cctype>
 
 using namespace std;
 
