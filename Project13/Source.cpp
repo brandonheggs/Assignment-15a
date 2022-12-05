@@ -15,6 +15,10 @@ class invalidRangeException
 {
 
 };
+class invaldCaseTransitionException
+{
+
+};
 
 char character(char start, int offset)
 {
@@ -31,6 +35,10 @@ char character(char start, int offset)
 		{
 			throw invalidRangeException();
 		}
+		else if ((target >= 65 && target <= 90 && startAsciiValue >= 95 && startAsciiValue <= 122) || (target >= 95 && target <= 122 && startAsciiValue >= 65 && startAsciiValue <= 90 ))
+		{
+			throw invaldCaseTransitionException();
+		}
 	}
 
 	catch (invalidCharacterExcpeption exception1)
@@ -42,10 +50,15 @@ char character(char start, int offset)
 	{
 		cout << " Error: invalid range! ";
 	}
+	catch (invaldCaseTransitionException exception3)
+	{
+		cout << "Error: invald case transition! ";
+	}
+	return char(target);
 }
 
 
 main()
-{ 
+{  
 
 }
