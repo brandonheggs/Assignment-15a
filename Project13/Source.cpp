@@ -41,29 +41,31 @@ char character(char start, int offset)
 		}
 	}
 
-	catch (invalidCharacterExcpeption exception1)
+	catch ( invalidCharacterExcpeption)
 	{
-		cout << " ERROR: invalid charcter! ";
-		return 0;
+		cout << "ERROR: invalid charcter! ";
+		return ' ';
 	}
-	catch (invalidRangeException exception2)
+	catch (invalidRangeException)
 	{
-		cout << " Error: invalid range! ";
+		cout << "ERROR: invalid range! ";
+		return ' ';
 	}
-	catch (invaldCaseTransitionException exception3)
+	catch (invaldCaseTransitionException)
 	{
-		cout << "Error: invald case transition! ";
+		cout << "ERROR: invald case transition! ";
+		return ' ';
 	}
 	return char(target);
 }
 
 
-main()
+int main()
 {
-	character('a', 1);
-	character('a', -1);
-	character('Z', -1);
-	character('?', 5);
+	cout << character('a', 1) << endl;
+	cout << character('a', -1) << endl;
+	cout << character('Z', -1) << endl;
+	cout << character('?', 5) << endl;
 
 	return 0;
 
