@@ -59,6 +59,12 @@ char character(char start, int offset)
 
 
 main()
-{  
+{
+	character('a', 1);
+	character('a', -1);
+	character('Z', -1);
+	character('?', 5);
+
+	return 0;
 
 }
