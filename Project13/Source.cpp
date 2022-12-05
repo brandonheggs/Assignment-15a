@@ -3,8 +3,13 @@
 //November 26, 2022
 
 #include <iostream>
-
+#include <string>
 using namespace std;
+
+class invalidCharacterExcpeption
+{
+
+};
 
 char character(char start, int offset)
 {
@@ -12,16 +17,19 @@ char character(char start, int offset)
 	int target = startAsciiValue + offset;
 	try
 	{
-		if 
+		if(startAsciiValue < 65 || (startAsciiValue > 90 && startAsciiValue < 97) || startAsciiValue > 122) 
 		{
-			string invalidCharacterExcpeption = "ERROR: invalid charcter!";
-			return 0;
+			throw invalidCharacterExcpeption();
+		
 		}
 	}
 
-	catch
+	catch (invalidCharacterExcpeption exception1)
+	{
+		cout << " ERROR: invalid charcter! ";
+		return 0;
+	}
 }
-
 
 
 main()
